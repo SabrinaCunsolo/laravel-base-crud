@@ -5,6 +5,6 @@ Oggi pomeriggio esercitatevi con le migrations:
 4. tramite phpMyAdmin inserite qualche riga nella tabella OK
 5. create un model Product OK
 6. create un ProductController usando l'opzione --resource affinché Laravel predisponga già tutte le funzioni per le CRUD OK
-7. create le rotte resource
-8. create una view index per listare tutti i prodotti presenti nel db -> per ogni prodotto aggiungete un link alla relativa pagina di dettaglio
-9. create una view show per visualizzare i dettagli di un singolo prodotto
+7. create le rotte resource OK
+8. create una view index per listare tutti i prodotti presenti nel db -> per ogni prodotto aggiungete un link alla relativa pagina di dettaglio OK
+9. create una view show per visualizzare i dettagli di un singolo prodotto OK
