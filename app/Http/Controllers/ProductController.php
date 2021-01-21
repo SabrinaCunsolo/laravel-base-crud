@@ -27,7 +27,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('products.create');
     }
 
     /**
@@ -38,7 +38,13 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $new_product = new Product();
+        //fill prende tutte le chiavi che trova nell'array e le assegna alle rispettive variabili di istanza
+        $new_product->fill($data);
+        $new_product->save();
+
+        return redirect()->route('products.index');
     }
 
     /**
@@ -47,17 +53,31 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+
+    // public function show($id)
+    // {
+    //     $product = Product::find($id);
+    //     if ($product) {
+    //         $data = [
+    //             'product' => Product::find($id)
+    //         ];
+    //         return view('products.show', $data);
+    //     }
+    //     abort(404);
+    //
+    // }
+    //---> passo istanza del Model Product + spazio + variabile $product e Laravel effettua il risultato del find:
+
+    public function show(Product $product)
     {
-        $product = Product::find($id);
+        // $product = Product::find($id);
         if ($product) {
             $data = [
-                'product' => Product::find($id)
+                'product' => $product
             ];
             return view('products.show', $data);
         }
         abort(404);
-
     }
 
     /**

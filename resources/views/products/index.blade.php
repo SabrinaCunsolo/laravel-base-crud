@@ -4,8 +4,8 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1>Lista dei prodotti presenti sullo shop:</h1>
-
+                <h3 class="mt-3 mb-3">Lista dei prodotti presenti sullo shop:</h3>
+                <a href="{{route ('products.create')}}" class="btn btn-info">Inserisci nuovo prodotto</a>
                 <table class="table">
                     <thead>
                         <tr>
@@ -22,7 +22,7 @@
                                 <td>{{ $product->id }}</td>
                                 <td>{{ $product->type }}</td>
                                 <td>{{ $product->brand }}</td>
-                                <td>{{ $product->price }}</td>
+                                <td>{{ $product->price }}€</td>
                                 <td>
                                     <a href="{{ route('products.show', ['product' => $product->id ] ) }}" class="btn btn-info">
                                         Dettagli
